@@ -1,2 +1,3 @@
-# online-shoppers-purchasing-intention
-Repository for Online Shoppers Purchasing Intention Analysis
+# [Online Shoppers Purchasing Intention](https://patilpushkarp.gitlab.io/online-shoppers-purchasing-intention/intro.html)
+
+Data analysis project for online shoppers purchasing intention.
