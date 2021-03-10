@@ -300,8 +300,11 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data into dataframe</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./../../datasets/online_shoppers_intention.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data into dataframe from local</span>
+<span class="c1"># df = pd.read_csv(&#39;./../../datasets/online_shoppers_intention.csv&#39;)</span>
+
+<span class="c1"># Load data into dataframe from UCI repository</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/00468/online_shoppers_intention.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -379,7 +382,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "655ef30daf3c44cca765f7e46cd7fcff", "version_major": 2, "version_minor": 0}
+{"model_id": "643cde9e40a74d4b832e7a63b9a1d5f7", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>All the page related columns have most of the values concentrated towards 0. Bounce rates and exit rates have values near the extremes, though for both of them values exist more towards 0 than the other end. Page values and special day columns have a large number of values which are 0.<br />
@@ -534,7 +537,7 @@ Due to high power of SW test, for large number of features, it is quite sensitiv
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "2e906f76f7564e04993a158bc3d440ae", "version_major": 2, "version_minor": 0}
+{"model_id": "42784e741cdf4044acf3e3d1adee0ebe", "version_major": 2, "version_minor": 0}
 </script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.plot_qq(x)&gt;
 </pre></div>
 </div>
@@ -595,7 +598,7 @@ For Q-Q plots, all the points should lie on the standardized line. Thus deviatio
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "cb76ff51a2444159b9a1a238e7278d6d", "version_major": 2, "version_minor": 0}
+{"model_id": "266be5d976bc466cad9e0cd5ee780d88", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>Beginning from the operating systems, operating systems 5, 6 and 7 have very less data but can’t be considered as outliers. Operating System 2 is used by most of the visitors.<br />
