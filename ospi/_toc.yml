@@ -1,0 +1,19 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: intro
+
+- part: Data Introduction
+  chapters:
+  - file: docs/data_preparation/dataset_intro.md
+  - file: docs/data_preparation/numerical_intro.ipynb
+  - file: docs/data_preparation/categorical_intro.ipynb
+  - file: docs/data_preparation/data_prep_1.ipynb
+
+- part: Exploratory Data Analysis
+  chapters:
+  - file: docs/eda/eda_1.ipynb
+
+- part: References
+  chapters:
+  - file: references.md
