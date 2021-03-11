@@ -13,6 +13,7 @@
 - part: Exploratory Data Analysis
   chapters:
   - file: docs/eda/eda_1.ipynb
+  - file: docs/eda/eda_2.ipynb
 
 - part: References
   chapters:
