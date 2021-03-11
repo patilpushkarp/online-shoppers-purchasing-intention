@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exploratory Data Analysis &#8212; Online Shoppers Purchasing Intention</title>
+    <title>Exploratory Data Analysis - Univariate &#8212; Online Shoppers Purchasing Intention</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -126,7 +126,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Exploratory Data Analysis
+   Exploratory Data Analysis - Univariate
   </a>
  </li>
 </ul>
@@ -254,21 +254,14 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#univariate-analysis">
-   Univariate Analysis
+  <a class="reference internal nav-link" href="#numerical-features">
+   Numerical features
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-features">
-     Numerical features
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#categorical-features">
-     Categorical features
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorical-features">
+   Categorical features
+  </a>
  </li>
 </ul>
 
@@ -282,8 +275,19 @@
         
               <div>
                 
-  <div class="section" id="exploratory-data-analysis">
-<h1>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="exploratory-data-analysis-univariate">
+<h1>Exploratory Data Analysis - Univariate<a class="headerlink" href="#exploratory-data-analysis-univariate" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This notebook contains interactive graphs and hence are not rendered directly here. Please use “live code” option to run it here or run the complete in Google Colaboratory or Binder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The interactivity for matplotlib graphs does not work with live code functionality. Hence, running the code in Google Colaboratory or Binder is recommended.</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary packages</span>
@@ -309,10 +313,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="univariate-analysis">
-<h2>Univariate Analysis<a class="headerlink" href="#univariate-analysis" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="numerical-features">
-<h3>Numerical features<a class="headerlink" href="#numerical-features" title="Permalink to this headline">¶</a></h3>
+<h2>Numerical features<a class="headerlink" href="#numerical-features" title="Permalink to this headline">¶</a></h2>
 <p>Only numbers can not tell us anything on it’s own but visual representation of those numbers is a treasure. This section will be focused on the univariate analysis i.e. analysis of variables one at a time. We will feal with numeircal features first followed by categorical features.</p>
 <p>Histograms and box plots can help us understand the numerical features with regards to their distribution. They also helps us to identify the outliers (values which are too far away from normal values) and also help us to understand the probability of an event occurrence.</p>
 <div class="cell docutils container">
@@ -382,7 +384,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "643cde9e40a74d4b832e7a63b9a1d5f7", "version_major": 2, "version_minor": 0}
+{"model_id": "e5866576cded43e2a4f2ad9d8ae80852", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>All the page related columns have most of the values concentrated towards 0. Bounce rates and exit rates have values near the extremes, though for both of them values exist more towards 0 than the other end. Page values and special day columns have a large number of values which are 0.<br />
@@ -537,7 +539,7 @@ Due to high power of SW test, for large number of features, it is quite sensitiv
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "42784e741cdf4044acf3e3d1adee0ebe", "version_major": 2, "version_minor": 0}
+{"model_id": "b26cc8f9f2fa46ed9abccbcb6fb57e84", "version_major": 2, "version_minor": 0}
 </script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.plot_qq(x)&gt;
 </pre></div>
 </div>
@@ -547,7 +549,7 @@ Due to high power of SW test, for large number of features, it is quite sensitiv
 For Q-Q plots, all the points should lie on the standardized line. Thus deviation of sample ditribution from the normal distribution is further confirmed by Q-Q plots of those features.</p>
 </div>
 <div class="section" id="categorical-features">
-<h3>Categorical features<a class="headerlink" href="#categorical-features" title="Permalink to this headline">¶</a></h3>
+<h2>Categorical features<a class="headerlink" href="#categorical-features" title="Permalink to this headline">¶</a></h2>
 <p>For categorical, we can check counts of available categories in each variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,7 +600,7 @@ For Q-Q plots, all the points should lie on the standardized line. Thus deviatio
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "266be5d976bc466cad9e0cd5ee780d88", "version_major": 2, "version_minor": 0}
+{"model_id": "a33c96c3a7634ac59eb8dee29230569f", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <p>Beginning from the operating systems, operating systems 5, 6 and 7 have very less data but can’t be considered as outliers. Operating System 2 is used by most of the visitors.<br />
@@ -609,7 +611,6 @@ Most of the visitors are of visitor type returning. Though as compared to return
 Most of the users shop in the weekends.
 Data is available for only 10 months. The missing months are January and April. Most of the shopping takes place in the months of May and November. These are closely floowed by March and December.<br />
 Most of visitors does not finalize the transaction. The ratio of the transacting users to the non-transacting users in approximately 1:5.</p>
-</div>
 </div>
 </div>
 
