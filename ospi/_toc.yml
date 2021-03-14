@@ -22,4 +22,5 @@
 
 - part: References
   chapters:
+  - file: packages.md
   - file: references.md
