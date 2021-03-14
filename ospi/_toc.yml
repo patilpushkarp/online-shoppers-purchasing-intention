@@ -15,6 +15,11 @@
   - file: docs/eda/eda_1.ipynb
   - file: docs/eda/eda_2.ipynb
 
+- part: Modelling, Evaluation and Interpretation
+  chapters:
+  - file: docs/models/models.md
+  - file: docs/models/log_reg/log_reg_train.ipynb
+
 - part: References
   chapters:
   - file: references.md
