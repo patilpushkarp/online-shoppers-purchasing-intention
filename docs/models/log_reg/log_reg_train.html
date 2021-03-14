@@ -316,6 +316,10 @@
                 
   <div class="section" id="logistic-regression">
 <h1>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is recommended to use google colaboratory for running the notebook.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extra libraries required</span>
@@ -352,6 +356,10 @@ One of the major advantage of the logistic regression is that the equation of pr
 </div>
 </div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Make sure to change the path of file depending upon the environment you are working on.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data into dataframe</span>
@@ -384,12 +392,6 @@ One of the major advantage of the logistic regression is that the equation of pr
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Oversample the minority class in the target variable</span>
 <span class="n">oversample</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">()</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">oversample</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function safe_indexing is deprecated; safe_indexing is deprecated in version 0.22 and will be removed in version 0.24.
-  warnings.warn(msg, category=FutureWarning)
 </pre></div>
 </div>
 </div>
@@ -449,7 +451,7 @@ One of the major advantage of the logistic regression is that the equation of pr
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression(C=100, class_weight=None, dual=False, fit_intercept=True,
-                   intercept_scaling=1, l1_ratio=None, max_iter=200,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
                    multi_class=&#39;auto&#39;, n_jobs=None, penalty=&#39;l2&#39;,
                    random_state=None, solver=&#39;lbfgs&#39;, tol=0.0001, verbose=0,
                    warm_start=False)
@@ -460,21 +462,16 @@ One of the major advantage of the logistic regression is that the equation of pr
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save and load the model if required</span>
-<span class="kn">import</span> <span class="nn">joblib</span>
-<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">logreg_clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">,</span> <span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/uci/ospi/models/log_reg.pkl&#39;</span><span class="p">)</span>
+<span class="c1"># import joblib</span>
+<span class="c1"># joblib.dump(logreg_clf.best_estimator_, &#39;/content/drive/MyDrive/Colab Notebooks/uci/ospi/models/log_reg.pkl&#39;)</span>
 <span class="c1"># logreg_clf = joblib.load(&#39;/content/drive/MyDrive/Colab Notebooks/uci/ospi/models/log_reg.pkl&#39;)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/content/drive/MyDrive/Colab Notebooks/uci/ospi/models/log_reg.pkl&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use models for prediction</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use model for prediction</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">logreg_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -493,7 +490,7 @@ One of the major advantage of the logistic regression is that the equation of pr
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-       False       0.95      0.88      0.91      2594
+       False       0.95      0.89      0.92      2594
         True       0.55      0.74      0.63       489
 
     accuracy                           0.86      3083
@@ -535,39 +532,50 @@ It should also be noted that coefficients provided by the logistic regression mo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/log_reg_train_27_0.png" src="../../../_images/log_reg_train_27_0.png" />
+<img alt="../../../_images/log_reg_train_29_0.png" src="../../../_images/log_reg_train_29_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot coefficients of logistic regression model</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">coef_df</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;coef&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;column&#39;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;notebook_connected&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html>
-<head><meta charset="utf-8" /></head>
-<body>
-    <div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
-            <div id="6ef5c4ce-825e-4783-a7af-c54abd2210fe" class="plotly-graph-div" style="height:525px; width:100%;"></div>
-            <script type="text/javascript">
+<div class="output text_html"><script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+</div><div class="output text_html"><div>
 
+
+            <div id="2fcfced6-7cda-4f7b-8f90-5c3d46022e51" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
 
-                if (document.getElementById("6ef5c4ce-825e-4783-a7af-c54abd2210fe")) {
+                if (document.getElementById("2fcfced6-7cda-4f7b-8f90-5c3d46022e51")) {
                     Plotly.newPlot(
-                        '6ef5c4ce-825e-4783-a7af-c54abd2210fe',
-                        [{"alignmentgroup": "True", "hoverlabel": {"namelength": 0}, "hovertemplate": "coef=%{x}<br>column=%{y}", "legendgroup": "", "marker": {"color": "#636efa"}, "name": "", "offsetgroup": "", "orientation": "h", "showlegend": false, "textposition": "auto", "type": "bar", "x": [50.5874739180209, 6.547295589512297, 2.3605039553950258, 1.8931002195406121, 1.5247472498860428, 1.1773218445790183, 1.0905522493567434, 1.0560699950860521, 0.9779940555208048, 0.9418817921757265], "xaxis": "x", "y": ["PageValues", "ProductRelated_Duration", "TrafficType__16", "Informational", "Browser__12", "OperatingSystems__7", "TrafficType__8", "TrafficType__14", "TrafficType__20", "Month__Nov"], "yaxis": "y"}],
+                        '2fcfced6-7cda-4f7b-8f90-5c3d46022e51',
+                        [{"alignmentgroup": "True", "hoverlabel": {"namelength": 0}, "hovertemplate": "coef=%{x}<br>column=%{y}", "legendgroup": "", "marker": {"color": "#636efa"}, "name": "", "offsetgroup": "", "orientation": "h", "showlegend": false, "textposition": "auto", "type": "bar", "x": [50.384317847568084, 4.548062180547581, 2.3569634820600314, 2.1143399242921324, 2.033757215062801, 1.6242271429488393, 1.5892203173243034, 1.0214194190358605, 0.9726372346959739, 0.9153652750072613], "xaxis": "x", "y": ["PageValues", "ProductRelated_Duration", "TrafficType__16", "Informational", "OperatingSystems__7", "Browser__12", "ProductRelated", "TrafficType__20", "TrafficType__8", "Month__Nov"], "yaxis": "y"}],
                         {"barmode": "relative", "legend": {"tracegroupgap": 0}, "margin": {"t": 60}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "coef"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "column"}}},
                         {"responsive": true}
                     ).then(function(){
 
-var gd = document.getElementById('6ef5c4ce-825e-4783-a7af-c54abd2210fe');
+var gd = document.getElementById('2fcfced6-7cda-4f7b-8f90-5c3d46022e51');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -591,11 +599,9 @@ if (outputEl) {{
 
                         })
                 };
-
+                });
             </script>
-        </div>
-</body>
-</html></div></div>
+        </div></div></div>
 </div>
 <p>From the above two plots, it can be observed that shap and the logistic regression model coefficients agree on page values to be the most important variable. The other feature that they are partially agreeing on is the duration for which visitor visits product related pages. Also, month of november seems to be also important for shopping and it makes sense since that is the period near holidays.</p>
 <div class="cell docutils container">
@@ -605,7 +611,7 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/log_reg_train_30_0.png" src="../../../_images/log_reg_train_30_0.png" />
+<img alt="../../../_images/log_reg_train_32_0.png" src="../../../_images/log_reg_train_32_0.png" />
 </div>
 </div>
 <p>Some high page values are prominently affecting the model. The higher the page value the higher the chance that the visitor will transact. For exit rates, though it is true that high value will not convert a visitor but low values may not convert her either. Customer spending huge amount of time on product related pages can convert the her into a transacting visitor, though the effect is not even comparable with the effect of page values. Also the customer visiting more number of informational pages may covert into a trasacting user. People shop the least in the month of may and shop the most in the month of november. Traffic type 8 is are the more likely to transact. This is even confirmed from the logitic regression coefficient as it is among the top 10 features affecting the model. Traffic type 10, 11 also contribute to the revenue. People using operating system 2 are more likely to transact. Though less amount of explanation is present from the author for the features such traffic type and operating system, no concrete interpretation for these features.</p>
