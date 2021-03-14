@@ -395,6 +395,13 @@ One of the major advantage of the logistic regression is that the equation of pr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/sklearn/utils/deprecation.py:87: FutureWarning:
+
+Function safe_indexing is deprecated; safe_indexing is deprecated in version 0.22 and will be removed in version 0.24.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Also, logistic regression is senistive to the feature ranges. Hence, it is necessary for us to transoform the data into unit norm. For our purpose, we will be utilizing the minmaxscaler API from scikit-learn. MinMaxScaler will not affect the categorical features unlike StandardScaler.</p>
 <div class="cell docutils container">
@@ -438,6 +445,694 @@ One of the major advantage of the logistic regression is that the equation of pr
 <span class="c1"># Train the model</span>
 <span class="n">logreg_clf</span> <span class="o">=</span> <span class="n">TuneGridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">logreg_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning: lbfgs failed to converge (status=1):
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> 
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Increase the number of iterations (max_iter) or scale the data as shown in:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/preprocessing.html
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> Please also refer to the documentation for alternative solver options:
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_sag.py:330: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   &quot;the coef_ did not converge&quot;, ConvergenceWarning)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_sag.py:330: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   &quot;the coef_ did not converge&quot;, ConvergenceWarning)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_sag.py:330: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   &quot;the coef_ did not converge&quot;, ConvergenceWarning)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_sag.py:330: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   &quot;the coef_ did not converge&quot;, ConvergenceWarning)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_sag.py:330: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   &quot;the coef_ did not converge&quot;, ConvergenceWarning)
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span> /usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_sag.py:330: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">(pid=730)</span>   &quot;the coef_ did not converge&quot;, ConvergenceWarning)
+/usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_logistic.py:940: ConvergenceWarning:
+
+lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TuneGridSearchCV(cv=StratifiedKFold(n_splits=5, random_state=None, shuffle=False),
+                 early_stopping=None, error_score=&#39;raise&#39;,
+                 estimator=LogisticRegression(C=1.0, class_weight=None,
+                                              dual=False, fit_intercept=True,
+                                              intercept_scaling=1,
+                                              l1_ratio=None, max_iter=100,
+                                              multi_class=&#39;auto&#39;, n_jobs=None,
+                                              penalty=&#39;l2&#39;, random_state=None,
+                                              solver=&#39;lbfgs&#39;, tol=0.0001,
+                                              verbose=0, wa...
+                          &lt;class &#39;ray.tune.logger.CSVLogger&#39;&gt;],
+                 max_iters=1, n_jobs=-1,
+                 param_grid={&#39;C&#39;: [0.001, 0.1, 1, 10, 100],
+                             &#39;max_iter&#39;: [100, 150, 200],
+                             &#39;solver&#39;: [&#39;liblinear&#39;, &#39;lbfgs&#39;, &#39;newton-cg&#39;,
+                                        &#39;sag&#39;, &#39;saga&#39;]},
+                 pipeline_auto_early_stop=True, refit=True,
+                 return_train_score=False,
+                 scoring={&#39;score&#39;: make_scorer(f1_score, average=binary)},
+                 sk_n_jobs=1, stopper=None, time_budget_s=None, use_gpu=True,
+                 verbose=0)
 </pre></div>
 </div>
 </div>
@@ -539,43 +1234,32 @@ It should also be noted that coefficients provided by the logistic regression mo
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot coefficients of logistic regression model</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">coef_df</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;coef&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;column&#39;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;notebook_connected&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;colab&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><script type="text/javascript">
-window.PlotlyConfig = {MathJaxConfig: 'local'};
-if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
-if (typeof require !== 'undefined') {
-require.undef("plotly");
-requirejs.config({
-    paths: {
-        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
-    }
-});
-require(['plotly'], function(Plotly) {
-    window._Plotly = Plotly;
-});
-}
-</script>
-</div><div class="output text_html"><div>
-
-
-            <div id="2fcfced6-7cda-4f7b-8f90-5c3d46022e51" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+<div class="output text_html"><html>
+<head><meta charset="utf-8" /></head>
+<body>
+    <div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
+            <div id="55af43fa-2f24-4a1b-9e27-ef174daa1b1a" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
-                require(["plotly"], function(Plotly) {
+
                     window.PLOTLYENV=window.PLOTLYENV || {};
 
-                if (document.getElementById("2fcfced6-7cda-4f7b-8f90-5c3d46022e51")) {
+                if (document.getElementById("55af43fa-2f24-4a1b-9e27-ef174daa1b1a")) {
                     Plotly.newPlot(
-                        '2fcfced6-7cda-4f7b-8f90-5c3d46022e51',
-                        [{"alignmentgroup": "True", "hoverlabel": {"namelength": 0}, "hovertemplate": "coef=%{x}<br>column=%{y}", "legendgroup": "", "marker": {"color": "#636efa"}, "name": "", "offsetgroup": "", "orientation": "h", "showlegend": false, "textposition": "auto", "type": "bar", "x": [50.384317847568084, 4.548062180547581, 2.3569634820600314, 2.1143399242921324, 2.033757215062801, 1.6242271429488393, 1.5892203173243034, 1.0214194190358605, 0.9726372346959739, 0.9153652750072613], "xaxis": "x", "y": ["PageValues", "ProductRelated_Duration", "TrafficType__16", "Informational", "OperatingSystems__7", "Browser__12", "ProductRelated", "TrafficType__20", "TrafficType__8", "Month__Nov"], "yaxis": "y"}],
+                        '55af43fa-2f24-4a1b-9e27-ef174daa1b1a',
+                        [{"alignmentgroup": "True", "hoverlabel": {"namelength": 0}, "hovertemplate": "coef=%{x}<br>column=%{y}", "legendgroup": "", "marker": {"color": "#636efa"}, "name": "", "offsetgroup": "", "orientation": "h", "showlegend": false, "textposition": "auto", "type": "bar", "x": [50.32986198894715, 4.592069601828041, 2.4174484589212333, 2.32851370873954, 1.8712921240427207, 1.321386343455726, 1.1570748771833923, 1.138160747481194, 0.9579565331406799, 0.9304347068669069], "xaxis": "x", "y": ["PageValues", "ProductRelated_Duration", "Informational", "TrafficType__16", "OperatingSystems__7", "Browser__12", "ProductRelated", "TrafficType__8", "Month__Nov", "TrafficType__14"], "yaxis": "y"}],
                         {"barmode": "relative", "legend": {"tracegroupgap": 0}, "margin": {"t": 60}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "coef"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "column"}}},
                         {"responsive": true}
                     ).then(function(){
 
-var gd = document.getElementById('2fcfced6-7cda-4f7b-8f90-5c3d46022e51');
+var gd = document.getElementById('55af43fa-2f24-4a1b-9e27-ef174daa1b1a');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -599,9 +1283,11 @@ if (outputEl) {{
 
                         })
                 };
-                });
+
             </script>
-        </div></div></div>
+        </div>
+</body>
+</html></div></div>
 </div>
 <p>From the above two plots, it can be observed that shap and the logistic regression model coefficients agree on page values to be the most important variable. The other feature that they are partially agreeing on is the duration for which visitor visits product related pages. Also, month of november seems to be also important for shopping and it makes sense since that is the period near holidays.</p>
 <div class="cell docutils container">
