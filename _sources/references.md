@@ -1,6 +1,4 @@
-# Research Papers
-
-Research papers used - 
+# References
 
 
 ```{bibliography}
