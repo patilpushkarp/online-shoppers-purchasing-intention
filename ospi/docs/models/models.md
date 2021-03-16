@@ -4,3 +4,4 @@ The task in hand demands us to predict whether a visitor will transact or not ba
 The metric that will be used for evaluation will be the same that is used in the original papers by the aithors i.e. the F1 score. For interpretation, techniques depending upon the model will be used.
 Following are models that are used in the project:
 1. Logistic Regression
+2. Support Vector Machine - Support Vector Classifier
