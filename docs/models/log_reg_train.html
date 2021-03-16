@@ -7,58 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logistic Regression &#8212; Online Shoppers Purchasing Intention</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
   <link rel="stylesheet"
-    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
   <link rel="stylesheet"
-    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Packages" href="../../../packages.html" />
-    <link rel="prev" title="Modelling, Evaluation and Interpretation" href="../models.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Support Vector Machine" href="svm_train.html" />
+    <link rel="prev" title="Modelling, Evaluation and Interpretation" href="models.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -75,20 +75,20 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../../index.html">
+<a class="navbar-brand text-wrap" href="../../index.html">
   
   
   <h1 class="site-logo" id="site-title">Online Shoppers Purchasing Intention</h1>
   
 </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../intro.html">
+  <a class="reference internal" href="../../intro.html">
    Online Shoppers Purchasing Intention sakar2019
   </a>
  </li>
@@ -100,22 +100,22 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../data_preparation/dataset_intro.html">
+  <a class="reference internal" href="../data_preparation/dataset_intro.html">
    Data Understanding
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../data_preparation/numerical_intro.html">
+  <a class="reference internal" href="../data_preparation/numerical_intro.html">
    Introduction to numerical features
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../data_preparation/categorical_intro.html">
+  <a class="reference internal" href="../data_preparation/categorical_intro.html">
    Introduction to categorical features
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../data_preparation/data_prep_1.html">
+  <a class="reference internal" href="../data_preparation/data_prep_1.html">
    Data Preparation
   </a>
  </li>
@@ -127,12 +127,12 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../eda/eda_1.html">
+  <a class="reference internal" href="../eda/eda_1.html">
    Exploratory Data Analysis - Univariate
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../eda/eda_2.html">
+  <a class="reference internal" href="../eda/eda_2.html">
    Exploratory Data Analysis - Multivariate
   </a>
  </li>
@@ -144,13 +144,18 @@
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../models.html">
+  <a class="reference internal" href="models.html">
    Modelling, Evaluation and Interpretation
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="svm_train.html">
+   Support Vector Machine
   </a>
  </li>
 </ul>
@@ -161,12 +166,12 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../packages.html">
+  <a class="reference internal" href="../../packages.html">
    Packages
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../references.html">
+  <a class="reference internal" href="../../references.html">
    References
   </a>
  </li>
@@ -210,7 +215,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/docs/models/log_reg/log_reg_train.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/models/log_reg_train.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -230,7 +235,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/patilpushkarp/online-shoppers-purchasing-intention/issues/new?title=Issue%20on%20page%20%2Fdocs/models/log_reg/log_reg_train.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/patilpushkarp/online-shoppers-purchasing-intention/issues/new?title=Issue%20on%20page%20%2Fdocs/models/log_reg_train.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -251,17 +256,17 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/patilpushkarp/online-shoppers-purchasing-intention/main?urlpath=tree/ospi/docs/models/log_reg/log_reg_train.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/patilpushkarp/online-shoppers-purchasing-intention/main?urlpath=tree/ospi/docs/models/log_reg_train.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
+                    src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/patilpushkarp/online-shoppers-purchasing-intention/blob/main/ospi/docs/models/log_reg/log_reg_train.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/patilpushkarp/online-shoppers-purchasing-intention/blob/main/ospi/docs/models/log_reg_train.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../../_static/images/logo_colab.png"
+                    src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
@@ -342,7 +347,7 @@
 <span class="math notranslate nohighlight">\(
 logit(Y) = natural\_log (odds) = ln\bigg(\frac{\pi}{1-\pi}\bigg) = \alpha + \beta x \tag{1}
 \)</span></p>
-<p>To find the probability of an outcome, take the antilog of both the sides of (\ref{eq1}). Euation (\ref{eq1}) is necessary to make the relationship between the predictor and the dependent variable linear. <span id="id1">[<a class="reference internal" href="../../../references.html#id3"><span>PLI02</span></a>]</span>
+<p>To find the probability of an outcome, take the antilog of both the sides of (\ref{eq1}). Euation (\ref{eq1}) is necessary to make the relationship between the predictor and the dependent variable linear. <span id="id1">[<a class="reference internal" href="../../references.html#id3"><span>PLI02</span></a>]</span>
 One of the major advantage of the logistic regression is that the equation of probability is simple. This allows it to be applied to large datasets. But the major con of this method is that it can not map the non linear relationships peoperly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,7 +551,7 @@ It should also be noted that coefficients provided by the logistic regression mo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/log_reg_train_30_0.png" src="../../../_images/log_reg_train_30_0.png" />
+<img alt="../../_images/log_reg_train_30_0.png" src="../../_images/log_reg_train_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -625,7 +630,7 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/log_reg_train_33_0.png" src="../../../_images/log_reg_train_33_0.png" />
+<img alt="../../_images/log_reg_train_33_0.png" src="../../_images/log_reg_train_33_0.png" />
 </div>
 </div>
 <p>Some high page values are prominently affecting the model. The higher the page value the higher the chance that the visitor will transact. For exit rates, though it is true that high value will not convert a visitor but low values may not convert her either. Customer spending huge amount of time on product related pages can convert the her into a transacting visitor, though the effect is not even comparable with the effect of page values. Also the customer visiting more number of informational pages may covert into a trasacting user. People shop the least in the month of may and shop the most in the month of november. Traffic type 8 is are the more likely to transact. This is even confirmed from the logitic regression coefficient as it is among the top 10 features affecting the model. Traffic type 10, 11 also contribute to the revenue. People using operating system 2 are more likely to transact. Though less amount of explanation is present from the author for the features such traffic type and operating system, no concrete interpretation for these features.</p>
@@ -652,7 +657,7 @@ if (outputEl) {{
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./docs/models/log_reg"
+            path: "./docs/models"
         },
         predefinedOutput: true
     }
@@ -664,8 +669,8 @@ if (outputEl) {{
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../models.html" title="previous page">Modelling, Evaluation and Interpretation</a>
-    <a class='right-next' id="next-link" href="../../../packages.html" title="next page">Packages</a>
+    <a class='left-prev' id="prev-link" href="models.html" title="previous page">Modelling, Evaluation and Interpretation</a>
+    <a class='right-next' id="next-link" href="svm_train.html" title="next page">Support Vector Machine</a>
 
         </div>
         
@@ -688,7 +693,7 @@ if (outputEl) {{
     </div>
 
     
-  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     
