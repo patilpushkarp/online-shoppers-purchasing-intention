@@ -20,6 +20,7 @@
   - file: docs/models/models.md
   - file: docs/models/log_reg_train.ipynb
   - file: docs/models/svm_train.ipynb
+  - file: docs/models/decision_tree_train.ipynb
 
 - part: References
   chapters:
