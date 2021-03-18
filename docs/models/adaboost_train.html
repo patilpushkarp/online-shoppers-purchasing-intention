@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adaboost &#8212; Online Shoppers Purchasing Intention</title>
+    <title>Adaboost Classifier &#8212; Online Shoppers Purchasing Intention</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -163,7 +163,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Adaboost
+   Adaboost Classifier
   </a>
  </li>
 </ul>
@@ -327,8 +327,8 @@
         
               <div>
                 
-  <div class="section" id="adaboost">
-<h1>Adaboost<a class="headerlink" href="#adaboost" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="adaboost-classifier">
+<h1>Adaboost Classifier<a class="headerlink" href="#adaboost-classifier" title="Permalink to this headline">¶</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>It is recommended to use google colaboratory to run this notebook.</p>
@@ -362,11 +362,19 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/sklearn/externals/six.py:31: FutureWarning: The module is deprecated in version 0.21 and will be removed in version 0.23 since we&#39;ve dropped support for Python 2.7. Please rely on the official version of six (https://pypi.org/project/six/).
+  &quot;(https://pypi.org/project/six/).&quot;, FutureWarning)
+/usr/local/lib/python3.7/dist-packages/sklearn/utils/deprecation.py:144: FutureWarning: The sklearn.neighbors.base module is  deprecated in version 0.22 and will be removed in version 0.24. The corresponding classes / functions should instead be imported from sklearn.neighbors. Anything that cannot be imported from sklearn.neighbors is now part of the private API.
+  warnings.warn(message, FutureWarning)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set default plotly renderer</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;colab&quot;</span> <span class="c1"># set it to &quot;colab&quot; for working in google colaboratory</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook_connected&quot;</span> <span class="c1"># set it to &quot;colab&quot; for working in google colaboratory</span>
 </pre></div>
 </div>
 </div>
@@ -467,7 +475,7 @@
                                                          presort=&#39;deprecated&#39;,
                                                          random_state=None,
                                                          splitter=&#39;random&#39;),
-                   learning_rate=0.01, n_estimators=100, random_state=None)
+                   learning_rate=0.01, n_estimators=200, random_state=None)
 </pre></div>
 </div>
 </div>
@@ -503,12 +511,12 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-       False       0.94      0.94      0.94      2594
-        True       0.68      0.66      0.67       489
+       False       0.93      0.93      0.93      2594
+        True       0.65      0.65      0.65       489
 
-    accuracy                           0.90      3083
-   macro avg       0.81      0.80      0.80      3083
-weighted avg       0.89      0.90      0.90      3083
+    accuracy                           0.89      3083
+   macro avg       0.79      0.79      0.79      3083
+weighted avg       0.89      0.89      0.89      3083
 </pre></div>
 </div>
 </div>
@@ -543,27 +551,38 @@ weighted avg       0.89      0.90      0.90      3083
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html>
-<head><meta charset="utf-8" /></head>
-<body>
-    <div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
-            <div id="6dc0de16-447a-4873-821c-d26146f1ed3f" class="plotly-graph-div" style="height:525px; width:100%;"></div>
-            <script type="text/javascript">
+<div class="output text_html"><script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+</div><div class="output text_html"><div>
 
+
+            <div id="3e712903-ea20-4cc3-ab77-5b58d1d93173" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
 
-                if (document.getElementById("6dc0de16-447a-4873-821c-d26146f1ed3f")) {
+                if (document.getElementById("3e712903-ea20-4cc3-ab77-5b58d1d93173")) {
                     Plotly.newPlot(
-                        '6dc0de16-447a-4873-821c-d26146f1ed3f',
-                        [{"alignmentgroup": "True", "hoverlabel": {"namelength": 0}, "hovertemplate": "feature_importance=%{x}<br>column=%{y}", "legendgroup": "", "marker": {"color": "#636efa"}, "name": "", "offsetgroup": "", "orientation": "h", "showlegend": false, "textposition": "auto", "type": "bar", "x": [0.38729416297331326, 0.05027410194165933, 0.04641258729936831, 0.04479502162966296, 0.04425772377853513, 0.04068733265914319, 0.029389899565434793, 0.0277072473046265, 0.02201103948148867, 0.02141024407403042, 0.01994547956242773, 0.018086682022347526, 0.015965738209823707, 0.014903366846646506, 0.013826765816060536, 0.013181054388061244, 0.010820606601906278, 0.010741197785208878, 0.010241091405436577, 0.009981519478356881], "xaxis": "x", "y": ["PageValues", "ProductRelated", "ExitRates", "ProductRelated_Duration", "TrafficType__2", "Month__Nov", "Administrative", "BounceRates", "TrafficType__1", "Administrative_Duration", "Region__1", "OperatingSystems__2", "Informational", "Weekend", "Month__Dec", "Region__3", "VisitorType__Returning_Visitor", "OperatingSystems__3", "VisitorType__New_Visitor", "Month__May"], "yaxis": "y"}],
+                        '3e712903-ea20-4cc3-ab77-5b58d1d93173',
+                        [{"alignmentgroup": "True", "hoverlabel": {"namelength": 0}, "hovertemplate": "feature_importance=%{x}<br>column=%{y}", "legendgroup": "", "marker": {"color": "#636efa"}, "name": "", "offsetgroup": "", "orientation": "h", "showlegend": false, "textposition": "auto", "type": "bar", "x": [0.3999620177687624, 0.0519051717249592, 0.039831363870038834, 0.03616879462972556, 0.0347321981428407, 0.03398382932501601, 0.03182072603906622, 0.02407408322976666, 0.023422949682276425, 0.021735499359262177, 0.020603426053763654, 0.01721421581042215, 0.0157509132174076, 0.01368014138814725, 0.013463688862944377, 0.013424826897351945, 0.012571714768350579, 0.012404060404170495, 0.010983970863243469, 0.010741804130978473], "xaxis": "x", "y": ["PageValues", "TrafficType__1", "ProductRelated", "OperatingSystems__2", "ExitRates", "Month__Nov", "ProductRelated_Duration", "BounceRates", "Administrative", "TrafficType__2", "Region__1", "Region__4", "OperatingSystems__3", "Browser__1", "Administrative_Duration", "Region__3", "Browser__2", "Weekend", "Month__Dec", "Informational"], "yaxis": "y"}],
                         {"barmode": "relative", "legend": {"tracegroupgap": 0}, "margin": {"t": 60}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "feature_importance"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "column"}}},
                         {"responsive": true}
                     ).then(function(){
 
-var gd = document.getElementById('6dc0de16-447a-4873-821c-d26146f1ed3f');
+var gd = document.getElementById('3e712903-ea20-4cc3-ab77-5b58d1d93173');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -587,11 +606,9 @@ if (outputEl) {{
 
                         })
                 };
-
+                });
             </script>
-        </div>
-</body>
-</html></div></div>
+        </div></div></div>
 </div>
 <p>As usual, the page value feature has gained the highest value in the importance measure. This model believes that features regarding product related pages are more important than features related to other pages. Product related pages features are closely followed by the administrative pages features in terms of importance. Exit rates affect more than the bounce rate to the model. Also, the month of November came out to be one of the most important predictor.</p>
 <p>Unfortunately, SHAP package does not support Adaboost Classifier.</p>
