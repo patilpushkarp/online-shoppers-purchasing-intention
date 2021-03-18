@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Decision Tree Classifier &#8212; Online Shoppers Purchasing Intention</title>
+    <title>Adaboost &#8212; Online Shoppers Purchasing Intention</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,8 +55,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Adaboost" href="adaboost_train.html" />
-    <link rel="prev" title="Support Vector Machine" href="svm_train.html" />
+    <link rel="next" title="Packages" href="../../packages.html" />
+    <link rel="prev" title="Decision Tree Classifier" href="decision_tree_train.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -156,13 +156,13 @@
    Support Vector Machine
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="decision_tree_train.html">
    Decision Tree Classifier
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="adaboost_train.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Adaboost
   </a>
  </li>
@@ -223,7 +223,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/models/decision_tree_train.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/models/adaboost_train.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -243,7 +243,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/patilpushkarp/online-shoppers-purchasing-intention/issues/new?title=Issue%20on%20page%20%2Fdocs/models/decision_tree_train.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/patilpushkarp/online-shoppers-purchasing-intention/issues/new?title=Issue%20on%20page%20%2Fdocs/models/adaboost_train.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -264,7 +264,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/patilpushkarp/online-shoppers-purchasing-intention/main?urlpath=tree/ospi/docs/models/decision_tree_train.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/patilpushkarp/online-shoppers-purchasing-intention/main?urlpath=tree/ospi/docs/models/adaboost_train.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -272,7 +272,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/patilpushkarp/online-shoppers-purchasing-intention/blob/main/ospi/docs/models/decision_tree_train.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/patilpushkarp/online-shoppers-purchasing-intention/blob/main/ospi/docs/models/adaboost_train.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -327,11 +327,11 @@
         
               <div>
                 
-  <div class="section" id="decision-tree-classifier">
-<h1>Decision Tree Classifier<a class="headerlink" href="#decision-tree-classifier" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="adaboost">
+<h1>Adaboost<a class="headerlink" href="#adaboost" title="Permalink to this headline">¶</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>It is recommended to use google colaboratory for running the notebook.</p>
+<p>It is recommended to use google colaboratory to run this notebook.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -341,12 +341,12 @@
 ! pip install tune-sklearn ray[tune]
 
 # Install shap
-! pip install shap
+# ! pip install shap
 </pre></div>
 </div>
 </div>
 </div>
-<p>Decision trees are non-parametric supervised algorithms which predicts the target variable by learning simple decision rules inferred from the data. They are widely known for their interpretability. They are highly reliable and can even perform under certain violations of assumptions. But they can be highly sensitive to data and can also be unstable.</p>
+<p>Adaboost classifier is the ensemble method which fits the sequence of weak learners on repeatedly modified versions of data. The predictions from all the weak learners are then combined using wieghted majority vote. The algorithm trains the first learner on the unweighted data but in the subsequent training the weights are adjusted based on misclassifications so that more difficult cases also be dealt with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary packages</span>
@@ -354,6 +354,7 @@
 <span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">SMOTE</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">StratifiedKFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
@@ -365,10 +366,14 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set default plotly renderer</span>
-<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook_connected&quot;</span> <span class="c1"># set it to &quot;colab&quot; for working in google colaboratory</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;colab&quot;</span> <span class="c1"># set it to &quot;colab&quot; for working in google colaboratory</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Make sure to change the path of file depending upon the environment you are working on.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -380,6 +385,7 @@
 </div>
 <div class="section" id="preprocessing">
 <h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
+<p>The preprocessing steps remains the same as with the earlier algorithms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Revenue&#39;</span><span class="p">]</span>
@@ -390,13 +396,13 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Split data into training and testing set</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Split the data into training and testing set</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Since decision trees can not perform better with imbalanced target variable, it is necessary to oversample the minority class in the dataset.</p>
+<p>The underlying base estimator that will be used in Adaboost classifier is the decision tree classifier which can not perform well with the imbalanced classes. Hence it is better to oversample the minority class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Oversample the minority class in the target variable</span>
@@ -409,21 +415,19 @@
 </div>
 <div class="section" id="model-training">
 <h2>Model Training<a class="headerlink" href="#model-training" title="Permalink to this headline">¶</a></h2>
+<p>Adaboost requires a base base estimator. It will be better to use best Decision Tree classifier that was trained earlier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare the model</span>
-<span class="n">estimator</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">estimator</span> <span class="o">=</span> <span class="n">AdaBoostClassifier</span><span class="p">(</span><span class="n">base_estimator</span><span class="o">=</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">splitter</span><span class="o">=</span><span class="s2">&quot;random&quot;</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">))</span>
 
 <span class="c1"># Declare cross-validation method</span>
 <span class="n">cv</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">()</span>
 
-<span class="c1"># Declare the parameter grid to be searched</span>
+<span class="c1"># Declare paramters grid</span>
 <span class="n">param_grid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="n">criterion</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">],</span>
-    <span class="n">splitter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="s1">&#39;random&#39;</span><span class="p">],</span>
-    <span class="n">max_depth</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
-    <span class="n">min_samples_split</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
-    <span class="n">max_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;log2&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="n">n_estimators</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
+    <span class="n">learning_rate</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -435,26 +439,35 @@
 <span class="kn">from</span> <span class="nn">tune_sklearn</span> <span class="kn">import</span> <span class="n">TuneGridSearchCV</span>
 
 <span class="c1"># Train the model</span>
-<span class="n">dtree_clf</span> <span class="o">=</span> <span class="n">TuneGridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">dtree_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">adab_clf</span> <span class="o">=</span> <span class="n">TuneGridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">use_gpu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">adab_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the best performing model</span>
-<span class="n">dtree_clf</span><span class="o">.</span><span class="n">best_estimator_</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adab_clf</span><span class="o">.</span><span class="n">best_estimator</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion=&#39;gini&#39;,
-                       max_depth=20, max_features=None, max_leaf_nodes=None,
-                       min_impurity_decrease=0.0, min_impurity_split=None,
-                       min_samples_leaf=1, min_samples_split=2,
-                       min_weight_fraction_leaf=0.0, presort=&#39;deprecated&#39;,
-                       random_state=None, splitter=&#39;random&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AdaBoostClassifier(algorithm=&#39;SAMME.R&#39;,
+                   base_estimator=DecisionTreeClassifier(ccp_alpha=0.0,
+                                                         class_weight=&#39;balanced&#39;,
+                                                         criterion=&#39;gini&#39;,
+                                                         max_depth=20,
+                                                         max_features=None,
+                                                         max_leaf_nodes=None,
+                                                         min_impurity_decrease=0.0,
+                                                         min_impurity_split=None,
+                                                         min_samples_leaf=1,
+                                                         min_samples_split=2,
+                                                         min_weight_fraction_leaf=0.0,
+                                                         presort=&#39;deprecated&#39;,
+                                                         random_state=None,
+                                                         splitter=&#39;random&#39;),
+                   learning_rate=0.01, n_estimators=100, random_state=None)
 </pre></div>
 </div>
 </div>
@@ -463,8 +476,8 @@
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save and load the model if required</span>
 <span class="kn">import</span> <span class="nn">joblib</span>
-<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dtree_clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">,</span> <span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/uci/ospi/models/dtree.pkl&#39;</span><span class="p">)</span>
-<span class="n">dtree_clf</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/uci/ospi/models/dtree.pkl&#39;</span><span class="p">)</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">adab_clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">,</span> <span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/uci/ospi/models/adab.pkl&#39;</span><span class="p">)</span>
+<span class="n">adab_clf</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/uci/ospi/models/adab.pkl&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -472,7 +485,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use model for prediction</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">dtree_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">adab_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -482,32 +495,33 @@
 <h2>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print classification report</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-       False       0.93      0.91      0.92      2594
-        True       0.58      0.63      0.60       489
+       False       0.94      0.94      0.94      2594
+        True       0.68      0.66      0.67       489
 
-    accuracy                           0.87      3083
-   macro avg       0.75      0.77      0.76      3083
-weighted avg       0.87      0.87      0.87      3083
+    accuracy                           0.90      3083
+   macro avg       0.81      0.80      0.80      3083
+weighted avg       0.89      0.90      0.90      3083
 </pre></div>
 </div>
 </div>
 </div>
-<p>Model seems to be too weak for identifying the visitors who will transact. Decision tree classifier performed close to the support vector classifier and logistic regression.</p>
+<p>Adaboost classifier has performed quite well. The result is close to Random Forest Classifier (F1 score = 0.81) that is used in the original paper.</p>
 </div>
 <div class="section" id="model-interpretation">
 <h2>Model Interpretation<a class="headerlink" href="#model-interpretation" title="Permalink to this headline">¶</a></h2>
-<p>Since decision trees use white-box models, it is easy to interpret them. The scikit-learn impleentation gives us the feature importances score for each independent variable used.</p>
+<p>Adaboost classifier also uses white-box model and it is easier to explain the results. Also the base estimator that is used - Decision Tree Classifier - uses a white box model itself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a feature importance dataframe</span>
-<span class="n">feat_imp_data</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Revenue&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">dtree_clf</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span>
+<span class="n">feat_imp_data</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Revenue&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">adab_clf</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span>
 <span class="n">feat_imp_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;column&#39;</span><span class="p">,</span> <span class="s1">&#39;feature_importance&#39;</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">feat_imp_data</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -529,38 +543,27 @@ weighted avg       0.87      0.87      0.87      3083
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><script type="text/javascript">
-window.PlotlyConfig = {MathJaxConfig: 'local'};
-if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
-if (typeof require !== 'undefined') {
-require.undef("plotly");
-requirejs.config({
-    paths: {
-        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
-    }
-});
-require(['plotly'], function(Plotly) {
-    window._Plotly = Plotly;
-});
-}
-</script>
-</div><div class="output text_html"><div>
-
-
-            <div id="f74f2b8e-3ad0-49cd-8aaa-e7ed49864aab" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+<div class="output text_html"><html>
+<head><meta charset="utf-8" /></head>
+<body>
+    <div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
+            <div id="6dc0de16-447a-4873-821c-d26146f1ed3f" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
-                require(["plotly"], function(Plotly) {
+
                     window.PLOTLYENV=window.PLOTLYENV || {};
 
-                if (document.getElementById("f74f2b8e-3ad0-49cd-8aaa-e7ed49864aab")) {
+                if (document.getElementById("6dc0de16-447a-4873-821c-d26146f1ed3f")) {
                     Plotly.newPlot(
-                        'f74f2b8e-3ad0-49cd-8aaa-e7ed49864aab',
-                        [{"alignmentgroup": "True", "hoverlabel": {"namelength": 0}, "hovertemplate": "feature_importance=%{x}<br>column=%{y}", "legendgroup": "", "marker": {"color": "#636efa"}, "name": "", "offsetgroup": "", "orientation": "h", "showlegend": false, "textposition": "auto", "type": "bar", "x": [0.2868550337620062, 0.14264643653525527, 0.12504620308237735, 0.08824835575010864, 0.049097701623675556, 0.04388151715836437, 0.01874319933284782, 0.01839838147040628, 0.01835581345978993, 0.016186421015885636, 0.015485524007041637, 0.012888137514438215, 0.012296495274504332, 0.011966180117810392, 0.011401724390686055, 0.010366133017450872, 0.008709062673607448, 0.007212966849274021, 0.005774248062383882, 0.0053454339472096355], "xaxis": "x", "y": ["PageValues", "ExitRates", "Month__Nov", "Month__Mar", "VisitorType__New_Visitor", "VisitorType__Returning_Visitor", "ProductRelated", "Administrative", "OperatingSystems__2", "Administrative_Duration", "TrafficType__2", "Informational", "ProductRelated_Duration", "Region__1", "Weekend", "OperatingSystems__3", "BounceRates", "Region__3", "Region__2", "Browser__1"], "yaxis": "y"}],
+                        '6dc0de16-447a-4873-821c-d26146f1ed3f',
+                        [{"alignmentgroup": "True", "hoverlabel": {"namelength": 0}, "hovertemplate": "feature_importance=%{x}<br>column=%{y}", "legendgroup": "", "marker": {"color": "#636efa"}, "name": "", "offsetgroup": "", "orientation": "h", "showlegend": false, "textposition": "auto", "type": "bar", "x": [0.38729416297331326, 0.05027410194165933, 0.04641258729936831, 0.04479502162966296, 0.04425772377853513, 0.04068733265914319, 0.029389899565434793, 0.0277072473046265, 0.02201103948148867, 0.02141024407403042, 0.01994547956242773, 0.018086682022347526, 0.015965738209823707, 0.014903366846646506, 0.013826765816060536, 0.013181054388061244, 0.010820606601906278, 0.010741197785208878, 0.010241091405436577, 0.009981519478356881], "xaxis": "x", "y": ["PageValues", "ProductRelated", "ExitRates", "ProductRelated_Duration", "TrafficType__2", "Month__Nov", "Administrative", "BounceRates", "TrafficType__1", "Administrative_Duration", "Region__1", "OperatingSystems__2", "Informational", "Weekend", "Month__Dec", "Region__3", "VisitorType__Returning_Visitor", "OperatingSystems__3", "VisitorType__New_Visitor", "Month__May"], "yaxis": "y"}],
                         {"barmode": "relative", "legend": {"tracegroupgap": 0}, "margin": {"t": 60}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "feature_importance"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "column"}}},
                         {"responsive": true}
                     ).then(function(){
 
-var gd = document.getElementById('f74f2b8e-3ad0-49cd-8aaa-e7ed49864aab');
+var gd = document.getElementById('6dc0de16-447a-4873-821c-d26146f1ed3f');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -584,51 +587,14 @@ if (outputEl) {{
 
                         })
                 };
-                });
+
             </script>
-        </div></div></div>
+        </div>
+</body>
+</html></div></div>
 </div>
-<p>Once again the feature page value came out to be the most important feature by a huge margin. The months of November and May also came out to be important as it was observed in the case of logistic regression. Surprisingly, this model thinks that number of product related pages visited by visitors is more important that the time spent by the visitors on those pages. The other most features features being bounce rate and number of informational pages visited by the visitors.</p>
-<p>SHAP package contain the tree explainer which can be used for tree based algorithms such as decision trees.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import shap</span>
-<span class="kn">import</span> <span class="nn">shap</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comput shap values</span>
-<span class="n">explainer</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">explainers</span><span class="o">.</span><span class="n">Tree</span><span class="p">(</span><span class="n">dtree_clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Revenue&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">shap_values</span> <span class="o">=</span> <span class="n">explainer</span><span class="o">.</span><span class="n">shap_values</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/decision_tree_train_30_0.png" src="../../_images/decision_tree_train_30_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot summary plot for class</span>
-<span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">X_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/decision_tree_train_31_0.png" src="../../_images/decision_tree_train_31_0.png" />
-</div>
-</div>
-<p>According to SHAP values, page values, month of November and month of May remains the most information feature. Low page values can’t result into transactions. Month of may is not suitable for the business, while the month of November is the exact opposite. It is surprising to note that features related to administrative pages are more important than features related to product related pages. Also, the more the number of administrative pages a vistor visits, the less likely she is going to transact. It is also surprising that according to the model, the new visitors are more likely to transact.</p>
+<p>As usual, the page value feature has gained the highest value in the importance measure. This model believes that features regarding product related pages are more important than features related to other pages. Product related pages features are closely followed by the administrative pages features in terms of importance. Exit rates affect more than the bounce rate to the model. Also, the month of November came out to be one of the most important predictor.</p>
+<p>Unfortunately, SHAP package does not support Adaboost Classifier.</p>
 </div>
 </div>
 
@@ -657,8 +623,8 @@ if (outputEl) {{
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="svm_train.html" title="previous page">Support Vector Machine</a>
-    <a class='right-next' id="next-link" href="adaboost_train.html" title="next page">Adaboost</a>
+    <a class='left-prev' id="prev-link" href="decision_tree_train.html" title="previous page">Decision Tree Classifier</a>
+    <a class='right-next' id="next-link" href="../../packages.html" title="next page">Packages</a>
 
         </div>
         
