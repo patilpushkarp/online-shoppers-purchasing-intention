@@ -5,3 +5,6 @@ The metric that will be used for evaluation will be the same that is used in the
 Following are models that are used in the project:
 1. Logistic Regression
 2. Support Vector Machine - Support Vector Classifier
+3. Decision Tree Classifier
+4. Adaboost Classifier
+5. Random Forest Classifier
