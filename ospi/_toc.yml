@@ -22,6 +22,7 @@
   - file: docs/models/svm_train.ipynb
   - file: docs/models/decision_tree_train.ipynb
   - file: docs/models/adaboost_train.ipynb
+  - file: docs/models/ran_for_train.ipynb
 
 - part: References
   chapters:

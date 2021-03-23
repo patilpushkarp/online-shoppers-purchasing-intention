@@ -10,3 +10,4 @@ This project is not built from scratch and in the process utilizes a lot of pack
 6. Matplotlib {cite}`Hunter:2007`
 7. Scikit-learn {cite}`scikit-learn` {cite}`sklearn_api`
 8. SHAP {cite}`NIPS2017_7062`   
+9. XGBoost {cite}`Chen:2016:XST:2939672.2939785`
