@@ -171,11 +171,6 @@
    Random Forest Classifier
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#model-interpretation">
-   Model Interpretation
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -305,29 +300,22 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Random Forest Classifier
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing">
+   Preprocessing
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#preprocessing">
-     Preprocessing
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#model-training">
-     Model Training
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#model-evaluation">
-     Model Evaluation
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-training">
+   Model Training
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-evaluation">
+   Model Evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#model-interpretation">
    Model Interpretation
   </a>
@@ -533,9 +521,8 @@ weighted avg       0.90      0.89      0.89      3083
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="model-interpretation">
-<h1>Model Interpretation<a class="headerlink" href="#model-interpretation" title="Permalink to this headline">¶</a></h1>
+<h2>Model Interpretation<a class="headerlink" href="#model-interpretation" title="Permalink to this headline">¶</a></h2>
 <p>Like other tree models, random forest can also gives us the importance of features that are use by the model for prediction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -655,6 +642,7 @@ if (outputEl) {{
 </div>
 </div>
 <p>Random forest is much more clear about the importance of feature values. As usual, higher the page values higher the chance that a visitor will transact. People are more likely to transact in the month of Novemer and less likely to transact in the month of May. Surprisingly, the features related to product related pages are quite unimportant and the model is finding it difficult to use them appropriately. People using operating system 3 and traffic type 1 are less likely to transact. It can also be observed that model is finidng it difficult to use exit rates and boounce rate features.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
